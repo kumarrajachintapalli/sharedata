@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            
+            border: 1px solid #bd5734;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(134, 35, 2, 0.2);
+            position: relative; 
+            z-index: 2; 
+        }
+        .signup-box {
+            background: rgb(251, 251, 252);
+            padding: 20px;
+            border: 1px solid #f6f1f1;
+            border-radius: 5px;
+            position: relative; 
+            z-index: 3; 
+        }
+        .signup-box h2 {
+            margin: 0;
+            padding: 10px 0;
+        }
+        .signup-box input {
+            width: 400px;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #bd5734;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 5px;
+            color: #8c4026;
+        }
+        .signup-box input:focus {
+            border: 1px solid #bd5734;
+        }
+        .signup-box select {
+            width: 400px;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            border-color: #bd5734;
+            border: 1px solid #ae340b;
+            border-width: 2px;
+            color: #8c4026;
+        }
+        .signup-box button {
+            background: #ca4106;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 150px;
+        }
+        #scrolltext {
+            height: auto;
+            border-width: 3px;
+            border-style: ridge;
+            border-color: #bd5734;
+            border-radius: 10px;
+            align-content: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            line-height: 18pt;
+            padding: 7px;
+            background-color: white;
+            font-size: 25px;
+            color: #8c4026;
+        }
+        .cyear{
+            width: 200%;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: 'Exo', sans-serif;
+        }
+
+        .context {
+            width: 100%;
+            position: absolute;
+            top: 5vh;
+        }
+
+        .context h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 50px;
+        }
+
+        .area {
+            background: #f29d7f;
+            background-image: radial-gradient(circle, rgb(240, 223, 213), rgb(186, 67, 11), rgb(201, 89, 28));
+            width: 100%;
+            height: 130%;
+            position: absolute;
+            z-index: 1; 
+        }
+
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(241, 237, 237, 0.2);
+            animation: animate 15s linear infinite;
+            bottom: -150px;
+        }
+
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        .scrolling-text {
+            color: #f9f9f9; 
+            z-index: 4; 
+            position: relative;
+            font-size: 30px;
+        }
+
+        .left-image {
+            
+            z-index: 5;
+            width: 180px;
+            height: 120px;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+
+       
+        @media (max-width: 768px) {
+            .left-image {
+                display: none; /* Hide the image on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="context">
+        <div class="scrolling-text">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+                Prefer Guest Login if the below Mentioned Fields don't fit you well
+            </marquee>
+        </div>
+        
+        
+        <br>
+        <div class="container">
+            <div class="signup-box">
+
+                <h3>Be a Part of an ELITE<br><h2 style="color: #762003;">CSBS Odyssey</h2> </h3>
+                <img src="logo102.jpeg" alt="Left Image" class="left-image">
+                <h2 style="color: #bd5734;">Join US</h2>
+                <form method="post" action="/signupsubmit">
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+                    <input type="text" name="reg_number" placeholder="College Regd Number" required>
+                    <input type="text" name="mobile" placeholder="Mobile" required>
+                    <input type="text" name="branch" placeholder="Department" required>
+                    <select name="year" required>
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <input type="email" name="college_mail" placeholder="College Mail" required>
+                    <input type="password" name="password" placeholder="Create Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>
